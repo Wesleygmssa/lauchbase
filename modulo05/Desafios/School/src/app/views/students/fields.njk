@@ -1,0 +1,88 @@
+<div class="item">
+  <div>Avatar URL</div>
+  <div>
+    <input 
+      type="url" 
+      name="avatar_url" 
+      class="form-control" 
+      placeholder="http://"
+      value="{{ student.avatar_url }}"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Full Name</div>
+  <div>
+    <input 
+      type="text" 
+      name="name" 
+      class="form-control" 
+      placeholder="John Doe"
+      value="{{ student.name }}"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Email</div>
+  <div>
+    <input 
+      type="email" 
+      name="email" 
+      class="form-control" 
+      placeholder="example@school.com"
+      value="{{ student.email }}"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Age</div>
+  <input 
+    type="date" 
+    name="birthDate" 
+    class="form-control"
+    value="{{ student.birth }}"
+  >
+</div>
+
+<div class="item">
+  <div>School Year</div>
+  <div>
+    <select name="schoolYear" class="form-control">
+      <option value="5th of Elementary School" {% if student.year == "5th of Elementary School" %} selected {% endif %}>5th of Elementary School</option>
+      <option value="6th of Elementary School" {% if student.year == "6th of Elementary School" %} selected {% endif %}>6th of Elementary School</option>
+      <option value="7th of Elementary School" {% if student.year == "7th of Elementary School" %} selected {% endif %}>7th of Elementary School</option>
+      <option value="8th of Elementary School" {% if student.year == "8th of Elementary School" %} selected {% endif %}>8th of Elementary School</option>
+      <option value="1th of High School" {% if student.year == "1th of High School" %} selected {% endif %}>1th of High School</option>
+      <option value="2th of High School" {% if student.year == "2th of High School" %} selected {% endif %}>2th of High School</option>
+      <option value="3th of High School" {% if student.year == "3th of High School" %} selected {% endif %}>3th of High School</option>
+  </select>
+  </div>
+</div>
+
+<div class="item">
+  <div>School Hours</div>
+  <div>
+    <input
+      type="number"
+      name="schoolHours"
+      class="form-control"
+      value="{{ student.hours }}"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Teacher</div>
+  <div>
+    <select name="teacher" class="form-control">
+    {% for teacher in teacherOptions %}
+      <option value="{{ teacher.id }}" {% if student.teacher_id ==  teacher.id %} selected {% endif %}>{{ teacher.name }}</option>
+    {% endfor %}
+    </select>
+  </div>
+</div>
+
+<button type="submit">Send</button>

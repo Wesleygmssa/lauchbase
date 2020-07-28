@@ -1,0 +1,153 @@
+<div class="details">
+  <div class="item">
+    <div>Imagem da receita</div>
+    <div>
+      <input 
+        type="url" 
+        name="image" 
+        class="form-control"
+        value="{{ recipe.image }}"
+        placeholder="http://"
+      >
+    </div>
+  </div>
+</div>
+
+<div class="details">
+  <div class="item">
+    <div>Título da receita</div>
+    <div>
+      <input 
+        type="text" 
+        name="title" 
+        class="form-control"
+        value="{{ recipe.title }}"
+        placeholder="Nome da receita"
+      >
+    </div>
+  </div>
+</div>
+
+<div class="details">
+  <div class="item">
+    <div>Autor da receita</div>
+    <div>
+      <input 
+        type="text" 
+        name="author" 
+        class="form-control"
+        placeholder="Nome do chef"
+        value="{{ recipe.author }}"
+      >
+    </div>
+  </div>
+</div>
+
+<div class="details">
+  <div class="item" id="ingredients">
+    <div>Ingredientes</div>
+    {% if recipe.ingredients.length > 0 %}
+      {% for ingredient in recipe.ingredients %}
+      <div class="ingredient">
+        <input
+          type="text"
+          name="ingredients[]"
+          class="form-control"
+          placeholder="Ingrediente"
+          value="{{ ingredient }}"
+        />
+      </div>
+      {% endfor %}
+
+    {% else %}
+      <div class="ingredient">
+        <input
+          type="text"
+          name="ingredients[]"
+          class="form-control"
+          placeholder="Novo ingrediente"
+          value="{{ ingredient }}"
+        />
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<button type="button" class="button add-ingredient" onclick="RecipeFields.addIngredient()">Adicionar novo ingrediente</button>
+
+<div class="details">
+  <div class="item" id="preparation">
+    <div>Modo de preparo </div>
+      {% if recipe.preparation.length > 0 %}
+        {% for step in recipe.preparation %}
+          <div class="step">
+            <input
+              type="text"
+              name="preparation[]"
+              class="form-control"
+              placeholder="Novo passo"
+              value="{{ step }}"
+            />
+          </div>
+        {% endfor %}
+
+      {% else %}
+        <div class="step">
+          <input
+            type="text"
+            name="preparation[]"
+            class="form-control"
+            placeholder="Novo passo"
+            value="{{ step }}"
+          />
+        </div>  
+      {% endif %}  
+  </div>
+</div>
+
+<button type="button" class="button add-preparation" onclick="RecipeFields.addPreparation()">Adicionar novo passo</button>
+
+<div class="details">
+  <div class="item">
+    <div>Informações adicionais</div>
+    <div>
+      <textarea name="information" class="form-control">{{ recipe.information }}</textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+  const RecipeFields = {
+    // Adicionar novos ingredientes
+    addIngredient() {
+      const ingredients = document.querySelector('#ingredients');
+      const fieldContainer = document.querySelectorAll('.ingredient');
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") return false;
+
+      // Deixa o valor do input vazio
+      newField.children[0].value = "";
+      ingredients.appendChild(newField);
+    },
+
+    // Adicionar nova etapa
+    addPreparation() {
+      const preparation = document.querySelector('#preparation');
+      const fieldCOntainer = document.querySelectorAll('.step');
+
+      // Realiza um clone da última etapa adicionada
+      const newField = fieldCOntainer[fieldCOntainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") return false;
+
+      // Deixa o valor do input vazio
+      newField.children[0].value = "";
+      preparation.appendChild(newField);
+    }
+  }
+</script>

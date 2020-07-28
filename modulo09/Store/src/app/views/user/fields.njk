@@ -1,0 +1,82 @@
+<div class="item">
+    <div>Nome Completo <span class="required">*</span></div>
+    <div>
+        <input type="text" name="name" class="form-control" placeholder="Digite seu nome" value="{{ user.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Email <span class="required">*</span></div>
+    <div>
+        <input 
+            type="email" 
+            name="email" 
+            class="form-control" 
+            placeholder="Digite seu email" 
+            value="{{ user.email }}"
+            onblur="Validate.apply(this, 'isEmail')"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Senha <span class="required">*</span></div>
+    <div>
+        <input 
+            type="password" 
+            name="password" 
+            class="form-control" 
+            {% if not user.id %}
+            placeholder="Digite uma senha segura"
+            {% else %}
+            placeholder="Digite sua senha para atualizar seu cadastro"
+            {% endif %}
+        >
+    </div>
+</div>
+
+{% if not user.id %}
+<div class="item">
+    <div>Repita sua senha <span class="required">*</span></div>
+    <div>
+        <input type="password" name="passwordRepeat" class="form-control" placeholder="Repita sua senha">
+    </div>
+</div>
+{% endif %}
+
+<div class="item">
+    <div>CPF ou CNPJ <span class="required">*</span></div>
+    <div>
+        <input 
+            type="text" 
+            name="cpf_cnpj" 
+            class="form-control" 
+            placeholder="Digite o seu documento" 
+            value="{{ user.cpf_cnpj }}"
+            onkeydown="Mask.apply(this, 'cpfCnpj')"
+            onblur="Validate.apply(this, 'isCpfCnpj')"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>CEP <span class="required">*</span></div>
+    <div>
+        <input 
+            type="text" 
+            name="cep" 
+            class="form-control" 
+            placeholder="99999-999" 
+            value="{{ user.cep }}"
+            onkeydown="Mask.apply(this, 'cep')"
+            onblur="Validate.apply(this, 'isCep')"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Endereço Completo <span class="required">*</span></div>
+    <div>
+        <input type="text" name="address" class="form-control" placeholder="Digite seu endereço" value="{{ user.address }}">
+    </div>
+</div>

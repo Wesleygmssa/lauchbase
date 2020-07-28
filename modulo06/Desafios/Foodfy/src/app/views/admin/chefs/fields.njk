@@ -1,0 +1,23 @@
+<div class="item">
+  <div>Nome</div>
+  <div>
+    <input type="text" name="name" class="form-control" value="{{ chef.name }}" placeholder="Nome do chef"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Avatar</div>
+  
+  <div class="avatar-path" id="{{ avatar.id }}">
+    <span class="form-control">{{ avatar.src }}</span>
+    <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">close</i>
+  </div>
+  
+  <input type="hidden" name="removed_files">
+
+  <div class="avatar-upload">
+    <input type="file" name="avatar" id="avatar-input" accept="image/*" onload="PhotosUpload.handleFileInput(event)">
+    <p>Enviar Avatar</p>
+  </div>
+</div>

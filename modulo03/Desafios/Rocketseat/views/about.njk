@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+  <title>About | Rocketseat</title>
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+      <section id="about">
+        <div class="about-info">
+          <img src="{{ about.avatar_url }}" alt="Imagem de {{ about.avatar_url }}">
+          <h1 class="title">{{ about.name }}</h1>
+          <strong class="lead">{{ about.description }}</strong>
+        </div>
+        <div class="about-content">
+          <div class="techs">
+            Atualmente, nós trabalhamos com as melhores <br> tecnologias do mercado:
+            <ul>
+              
+              {% for tech in about.techs %}
+
+              <li>{{ tech.name }}</li>
+
+              {% endfor %}
+
+            </ul>
+          </div>
+          <p class="description">
+            No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, 
+            você precisa de alguém que te leve na direção certa.
+          </p>
+          <a href="/courses" class="btn">Quero embarcar nesse foguete</a>
+        </div>
+      </section>
+    </main>
+
+{% endblock %}

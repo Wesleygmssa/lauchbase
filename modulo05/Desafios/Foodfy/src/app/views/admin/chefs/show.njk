@@ -1,0 +1,56 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+  <section id="show">
+    <div class="head">
+      <h2>Chef: {{ chef.name }}</h2>
+      <span>
+        <a href="{{ chef.id}}/edit" class="button">Editar Chef</a>
+      </span>
+    </div>
+  </section>
+
+  <section class="chef">
+    <div class="img">
+      <img src="{{ chef.avatar_url }}">
+    </div>
+
+    <div class="title">
+      <p>{{ chef.name }}</p>
+    </div>
+
+    <div class="author">
+    {% if chef.total_recipes == 1 %}
+      <p>{{ chef.total_recipes }} receita</p>
+    {% else %}
+      <p>{{ chef.total_recipes }} receitas</p>
+    {% endif %}
+    </div>
+  </section>
+
+  <section class="index">
+    <div class="cards">
+    {% for recipe in recipes %}
+      <div class="recipe">
+        <div class="img">
+          <img src="{{ recipe.image }}">
+        </div>
+
+        <div>
+          <div class="title">
+            <p>{{ recipe.title }}</p>
+          </div>
+
+          <div class="author">
+            <p>por {{ recipe.chef_name }}</p>
+          </div>
+
+          <a href="recipes/{{ recipe.id }}" class="link">Visualizar</a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

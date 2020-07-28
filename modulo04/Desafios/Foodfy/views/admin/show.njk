@@ -1,0 +1,73 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+  <section id="show">
+    <div class="head">
+      <h2>Receita: {{ recipe.title }}</h2>
+      <span>
+        <a href="{{ recipe.id}}/edit" class="button">Editar receita</a>
+      </span>
+    </div>
+  </section>
+
+  <section class="head-recipe">
+    <div class="card">
+      <div class="img">
+        <img src="{{ recipe.image }}" alt="">
+      </div>
+
+      <div class="title">
+        <p>{{ recipe.title }}</p>
+      </div>
+
+      <div class="author">
+        <p>{{ recipe.author }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="body-recipe">
+    <div class="topic">
+      <div class="button">
+        <h2>Ingredientes</h2>
+        <span>ESCONDER</span>
+      </div>
+      <div class="topic-content">
+        <ul>
+          {% for ingredient in recipe.ingredients %}
+          <li>{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="button">
+        <h2>Modo de Preparo</h2>
+        <span>MOSTRAR</span>
+      </div>
+      
+      <div class="topic-content hidden">
+        <ul>
+          {% for preparation in recipe.preparation %}
+          <li>{{ preparation }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="button">
+        <h2>Informações adicionais</h2>
+        <span>ESCONDER</span>
+      </div>
+      
+      <div class="topic-content">
+        <p>{{ recipe.information }}</p>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}

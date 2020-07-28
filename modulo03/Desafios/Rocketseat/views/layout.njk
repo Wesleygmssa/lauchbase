@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    {% block head %}
+    
+    <title>Rocketseat</title>
+    
+    {% endblock %}
+
+    <link rel="icon" href="/img/favicon.png" >
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+
+  <body>
+    {% include "parts/header.njk" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "parts/footer.njk" %}
+  </body>
+</html>

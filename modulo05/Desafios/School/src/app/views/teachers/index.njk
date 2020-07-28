@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  <div class="card table-container">
+    <div class="header">
+      <a href="/teachers/create" class="btn">Create</a>
+      <form action="/teachers" method="GET">
+        <input type="text" name="filter" class="form-control" placeholder="Name or Subjects Taught" value="{{ filter }}">
+        <button type="submit">Filter</button>
+      </form>
+    </div>
+
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Subjects</th>
+          <th>Total Students</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for teacher in teachers %}
+        <tr>
+          <td>
+            <span style="background-image: url({{ teacher.avatar_url }})"></span>
+            {{ teacher.name }}
+          </td>
+          <td>
+            {% for subject in teacher.subjects_taught.split(",") %}
+            <span>{{ subject }}</span>
+            {% endfor %}
+          </td>
+          <td>{{ teacher.total_students }}</td>
+          <td><a href="/teachers/{{ teacher.id }}">View</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="pagination" data-page={{ pagination.page }} data-total={{ pagination.total }} data-filter={{ filter }}></div>
+
+  </div>
+
+{% endblock %}

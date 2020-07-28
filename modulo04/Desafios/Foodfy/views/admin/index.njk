@@ -1,0 +1,34 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+  <section class="index">
+    <div class="head">
+      <h2>Gerenciar receitas</h2>
+      <span>
+        <a href="recipes/create" class="button">Adicionar receita</a>
+      </span>
+    </div>
+
+    <div class="cards">
+    {% for recipe in recipes %}
+      <div class="recipe">
+        <div class="img">
+          <img src="{{ recipe.image }}">
+        </div>
+
+        <div class="title">
+          <p>{{ recipe.title }}</p>
+        </div>
+
+        <div class="author">
+          <p>por {{ recipe.author }}</p>
+        </div>
+
+        <a href="recipes/{{ recipe.id }}" class="link">Visualizar</a>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

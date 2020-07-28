@@ -1,0 +1,31 @@
+{% extends "home/layout.njk" %}
+
+{% block head %}<title>Chefs | Foodfy</title>{% endblock %}
+
+{% block content %}
+
+  <section style="margin-top: 50px">
+    <div class="chefs">
+    {% for chef in chefs %}
+      <div class="chef">
+        <div class="img">
+          <img src="{{ chef.path }}">
+        </div>
+
+        <div>
+          <div class="title"><p>{{ chef.name }}</p></div>
+
+          <div class="author">
+          {% if chef.total_recipes == 1 %}
+            <p>{{ chef.total_recipes }} receita</p>
+          {% else %}
+            <p>{{ chef.total_recipes }} receitas</p>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

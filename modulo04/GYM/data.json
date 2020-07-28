@@ -1,0 +1,64 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "João",
+      "email": "joao@gymmanager.com",
+      "birth": 981936000000,
+      "gender": "M",
+      "blood": "O0",
+      "weight": "80",
+      "height": "170"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Clarisse",
+      "email": "clarisse@gymmanager.com",
+      "birth": 915148800000,
+      "gender": "F",
+      "blood": "B1",
+      "weight": "65",
+      "height": "167"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "João",
+      "birth": 981936000000,
+      "gender": "M",
+      "services": "Crossfit",
+      "created_at": 1580863337191
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Vitor",
+      "birth": 1106179200000,
+      "gender": "M",
+      "services": "Natação",
+      "created_at": 1580863362234
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1543975200-8e313fb04fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Bruno",
+      "birth": 887673600000,
+      "gender": "M",
+      "services": "Crossfit",
+      "created_at": 1580948410613
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80",
+      "name": "Keverson",
+      "birth": 918086400000,
+      "gender": "M",
+      "services": "Natação",
+      "created_at": 1580948429912
+    }
+  ]
+}

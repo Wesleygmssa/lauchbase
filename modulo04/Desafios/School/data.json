@@ -1,0 +1,55 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "name": "João",
+      "email": "joao@school.com",
+      "birth": 981936000000,
+      "year": "3",
+      "hours": "8"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1309&q=80",
+      "name": "João",
+      "birth": 981936000000,
+      "type": "C",
+      "schooling": "",
+      "subjects": "HTML, CSS",
+      "created_at": 1581021861936
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1556302132-40bb13638500?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80",
+      "name": "Bruno",
+      "birth": 887673600000,
+      "type": "D",
+      "schooling": "college",
+      "subjects": "Design, Architecture",
+      "created_at": 1581022382955
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1516383607781-913a19294fd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
+      "name": "Vitor",
+      "birth": 1106179200000,
+      "type": "C",
+      "schooling": "",
+      "subjects": "JS, NodeJS",
+      "created_at": 1581022440794
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+      "name": "Keverson",
+      "birth": 941587200000,
+      "type": "D",
+      "schooling": "school",
+      "subjects": "Frontend",
+      "created_at": 1581022612984
+    }
+  ]
+}

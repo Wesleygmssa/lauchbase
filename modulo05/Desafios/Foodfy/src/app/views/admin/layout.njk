@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Foodfy</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+  </head>
+
+  <body>
+    <div class="admin">
+      <header class="admin container">
+        <a href="/admin/recipes">
+          <img src="/img/white.png" alt="Logo Foodfy" class="logo">
+        </a>
+
+        <div class="menu">
+          <a href="/admin/recipes">Receitas</a>
+          <a href="/admin/chefs">Chefs</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+    <script>
+      // Active menu
+      const currentPage = location.pathname;
+      const menuItems = document.querySelectorAll("header .menu a");
+
+      for (item of menuItems) {
+        if (currentPage.includes(item.getAttribute("href"))) {
+          item.classList.add("active");
+        }
+      }
+    </script>
+
+  </body>
+</html>

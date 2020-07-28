@@ -1,0 +1,90 @@
+  <div class="item">
+    <div>Avatar URL</div>
+    <div>
+      <input 
+        type="url" 
+        name="avatar_url" 
+        class="form-control" 
+        placeholder="http://"
+        value="{{ teacher.avatar_url }}"
+      >
+    </div>
+  </div>
+  
+  <div class="item">
+    <div>Full Name</div>
+    <div>
+      <input 
+        type="text" 
+        name="name" 
+        class="form-control" 
+        placeholder="John Doe"
+        value="{{ teacher.name }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Age</div>
+    <div>
+      <input 
+        type="date" 
+        name="birthDate" 
+        class="form-control"
+        value="{{ teacher.birth }}"
+      >
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Education Level</div>
+    <div>
+      <select name="educationLevel" class="form-control">
+        <option value="High School" {% if teacher.education_level == "High School" %} selected {% endif %}>High School</option>
+        <option value="College" {% if teacher.education_level == "College" %} selected {% endif %}>College</option>
+        <option value="Masters" {% if teacher.education_level == "Masters" %} selected {% endif %}>Masters</option>
+        <option value="Doctorate" {% if teacher.education_level == "Doctorate" %} selected {% endif %}>Doctorate</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Type of Class</div>
+    <div>
+      <span>
+        <input 
+          type="radio" 
+          name="classType"
+          value="C" 
+          {% if teacher.class_type == 'C' %}
+          checked
+          {% endif %}
+        > Classroom
+      </span>
+      <span>
+        <input 
+          type="radio" 
+          name="classType" 
+          value="D"
+          {% if teacher.class_type == 'D' %}
+          checked
+          {% endif %}
+        > Distance Learning
+      </span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Subject</div>
+    <div>
+      <input 
+        type="text" 
+        name="subjectsTaught" 
+        class="form-control" 
+        placeholder="Separate subjects with a comma"
+        value="{{ teacher.subjects_taught }}"
+      >
+    </div>
+  </div>
+
+  <button type="submit">Send</button>

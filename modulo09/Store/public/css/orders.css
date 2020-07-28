@@ -1,0 +1,193 @@
+/* ORDERS */
+.order-success,
+.order-error {
+    margin: auto;
+    padding: 0;
+    padding-bottom: 112px;
+    text-align: center;
+}
+
+.order-success .success-lottie { 
+    height: 200px;
+}
+
+.order-success a {
+    color: var(--secondary);
+}
+
+.order-error a {
+    color: #dc6868
+}
+
+.order-error .error-lottie {
+    height: 50px;
+    margin: 80px 0 56px;
+}
+
+/* MY ORDERS */
+section.orders,
+section.sales {
+    max-width: 940px;
+}
+
+.orders .item-container {
+    border-bottom: 1px solid #f2f2f2;
+    color: #444;
+    margin: 8px 0px;
+    padding: 16px 0px;
+    transition: all 200ms;
+    display: grid;
+    grid-template-columns: 1fr auto auto 100px 100px;
+    gap: 32px;
+    align-items: center;
+}
+
+.orders .item-container:last-child {
+    border: none;
+}
+
+.orders .item-container:hover {
+    background-color: #f2f2f2;
+}
+
+.orders .item {
+    display: flex;
+}
+
+.orders img {
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px -4px #000;
+    width: 70px;
+    height: 70px;
+    margin: 0px 16px;
+    object-fit: contain;
+}
+
+.orders .item div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.item .title,
+.item .price,
+.item .updated-at {
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.item .price,
+.orders .total {
+    font-weight: bold;
+}
+
+.item .updated-at {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+.orders .status {
+    color: #fff;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    justify-self: center;
+}
+
+.orders .status.open {
+    background-color: var(--secondary);   
+}
+
+.orders .status.sold {
+    background-color: var(--green);
+}
+
+.orders .status.canceled {
+    background-color: var(--red);
+}
+
+/* ORDER DETAILS */
+.order-detail .info {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.order-detail .info h4 {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.order-detail .info .status {
+    text-align: right;
+}
+
+.order-detail .info .status.open h2 {
+    color: var(--secondary);
+}
+
+.order-detail .info .status.sold h2 {
+    color: var(--green);
+}
+
+.order-detail .info .status.canceled h2 {
+    color: var(--red);
+}
+
+.order-detail .info .status p {
+    color: #777;
+    font-size: 12px;
+}
+
+.order-detail .product {
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+    padding: 16px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.order-detail img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 16px;
+    object-fit: contain;
+}
+
+.order-detail .price {
+    color: #555;
+    flex: 1;
+    font-weight: bold;
+    text-align: right;
+}
+
+.order-detail .quantity {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.order-detail .total {
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.order-detail .total span {
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 8px;
+}

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --main: #111111;
+  --pink: #FBDFDB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--main);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+header {
+  padding: 36px 0 30px 0;
+  display: grid;
+  grid-template-columns: 90.6px auto;
+  gap: 122.4px;
+  align-items: center;
+}
+
+.logo {
+  height: 27px;
+}
+
+.menu a {
+  padding: 0 15px;
+  color: var(--main);
+  font-size: 16px;
+}
+
+.menu a.active {
+  font-weight: 700;
+}
+
+.hero {
+  background: var(--pink);
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-text {
+  align-self: center;
+  width: 316px;
+  margin-left: 60px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.hero img {
+  height: 300px;
+  margin-top: 66px;
+  margin-right: 100px;
+  justify-self: end;
+}
+
+.featured,
+.recipes {
+  margin: 50px 0px;
+}
+
+.featured h2 {
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  cursor: pointer;
+}
+
+.recipe .img img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.author {
+  color: #777777;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #eeeeee;
+  color: #999999;
+  height: 62px;
+  font-size: 14px;
+  line-height: 16px;
+  display: grid;
+  margin-top: auto;
+  align-content: center;
+  text-align: center;
+}
+
+.about h2 {
+  margin: 20px auto;
+}
+
+.about h3 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #444444;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: #fff;
+  padding: 30px;
+  width: 660px;
+  height: 413px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.modal-content img {
+  border-radius: 15px;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.modal-content .title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.modal-content .author {
+  color: #777777;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.close {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  font-weight: 400;
+  margin-top: 60px;
+  cursor: pointer;
+}
